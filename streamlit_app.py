@@ -20,7 +20,7 @@ The dataset selected for this analysis comprises comprehensive records of Singap
 # reruns (e.g. if the user interacts with the widgets).
 #@st.cache_data
 def load_data():
-    folder_path = "/Users/elizabethjosephkoithara/Desktop/Kaplan/Mon_ICT305/Assg/01/HDB Dataset/"
+    folder_path = "Users/elizabethjosephkoithara/Desktop/Kaplan/Mon_ICT305/Assg/01/HDB Dataset/"
     files = [
         "resale-flat-prices-based-on-approval-date-1990-1999_locationdata.csv",
         "resale-flat-prices-based-on-approval-date-2000-feb-2012_locationdata.csv",
