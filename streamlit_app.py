@@ -1,4 +1,3 @@
-import altair as alt
 import pandas as pd
 import os
 import streamlit as st
@@ -20,7 +19,7 @@ The dataset selected for this analysis comprises comprehensive records of Singap
 # reruns (e.g. if the user interacts with the widgets).
 @st.cache
 def load_data():
-    folder_path = "HDB Dataset"  # Assuming 'HDB Dataset' folder is in the same directory as this script
+    folder_path = "./HDB Dataset"  # Assuming 'HDB Dataset' folder is in the same directory as this script
     files = [
         "resale-flat-prices-based-on-approval-date-1990-1999_locationdata.csv",
         "resale-flat-prices-based-on-approval-date-2000-feb-2012_locationdata.csv",
@@ -54,6 +53,7 @@ flat_type = st.multiselect(
 
 # Show a slider widget with the years using `st.slider`.
 years = st.slider("Years", 1986, 2006, (2000, 2016))
+
 
 
 # Filter the dataframe based on the widget input and reshape it.
