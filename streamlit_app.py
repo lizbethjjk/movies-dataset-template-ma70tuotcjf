@@ -30,7 +30,7 @@ def load_data():
     
     dfs = []
     for file in files:
-        df = pd.read_csv(os.path.join(folder_path, files))
+        df = pd.read_csv(os.path.join(folder_path, file))
         dfs.append(df)
     
     combined_df = pd.concat(dfs, ignore_index=True)
