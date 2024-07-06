@@ -5,7 +5,7 @@ import streamlit as st
 
 # Show the page title and description.
 st.set_page_config(page_title="Housing & Development Board Flat Types and Prices dashboard")
-st.title("HDB1 dataset")
+st.title("HDB dataset")
 st.write(
     """
     This project delves into analyzing and visualizing trends in Singapore HDB resale prices spanning from 1990 to 2023, leveraging Streamlit to create interactive data/graph visualizations. The objective is to provide insightful data exploration tools for stakeholders including buyers, investors, agents, and policymakers, facilitating informed decision-making. Streamlit will serve as the primary platform for developing dynamic user interfaces with features like filtering by year, flat type, and town. These interactive capabilities will enable users to explore trends over time and across different property categories dynamically. With Streamlit, the project aims to transform static data into engaging narrative tools, enhancing user engagement and supporting comprehensive analysis in the Singapore HDB resale market context.
