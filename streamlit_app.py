@@ -18,7 +18,7 @@ The dataset selected for this analysis comprises comprehensive records of Singap
 
 # Load the data from a CSV. We're caching this so it doesn't reload every time the app
 # reruns (e.g. if the user interacts with the widgets).
-@st.cache_data
+#@st.cache_data
 def load_data():
     folder_path = "/Users/elizabethjosephkoithara/Desktop/Kaplan/Mon_ICT305/Assg/01/HDB Dataset/"
     files = [
