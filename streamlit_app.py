@@ -1,5 +1,6 @@
 import altair as alt
 import pandas as pd
+import os
 import streamlit as st
 
 # Show the page title and description.
@@ -19,13 +20,22 @@ The dataset selected for this analysis comprises comprehensive records of Singap
 # reruns (e.g. if the user interacts with the widgets).
 @st.cache_data
 def load_data():
-    df = pd.read_csv("/Users/elizabethjosephkoithara/Desktop/Kaplan/Mon_ICT305/Assg/01/HDB Dataset/resale-flat-prices-based-on-approval-date-1990-1999_locationdata.csv")
-    #df = pd.read_csv("/Users/elizabethjosephkoithara/Desktop/Kaplan/Mon_ICT305/Assg/01/HDB Dataset/resale-flat-prices-based-on-approval-date-2000-feb-2012_locationdata.csv")
-    #df = pd.read_csv("/Users/elizabethjosephkoithara/Desktop/Kaplan/Mon_ICT305/Assg/01/resale-flat-prices-based-on-registration-date-from-jan-2015-to-dec-2016_locationdata.csv")
-    #df = pd.read_csv("/Users/elizabethjosephkoithara/Desktop/Kaplan/Mon_ICT305/Assg/01/HDB Dataset/resale-flat-prices-based-on-registration-date-from-jan-2017-onwards_locationdata.csv")
-    #df = pd.read_csv("/Users/elizabethjosephkoithara/Desktop/Kaplan/Mon_ICT305/Assg/01/HDB Dataset/resale-flat-prices-based-on-registration-date-from-mar-2012-to-dec-2014_locationdata.csv")
-    return df
-
+    folder_path = "/Users/elizabethjosephkoithara/Desktop/Kaplan/Mon_ICT305/Assg/01/HDB Dataset/"
+    files = [
+        "resale-flat-prices-based-on-approval-date-1990-1999_locationdata.csv",
+        "resale-flat-prices-based-on-approval-date-2000-feb-2012_locationdata.csv",
+        "resale-flat-prices-based-on-registration-date-from-jan-2015-to-dec-2016_locationdata.csv",
+        "resale-flat-prices-based-on-registration-date-from-jan-2017-onwards_locationdata.csv",
+        "resale-flat-prices-based-on-registration-date-from-mar-2012-to-dec-2014_locationdata.csv"
+    ]
+    
+    dfs = []
+    for file in files:
+        df = pd.read_csv(os.path.join(folder_path, file))
+        dfs.append(df)
+    
+    combined_df = pd.concat(dfs, ignore_index=True)
+    return combined_df
 
 df = load_data()
 
