@@ -18,9 +18,9 @@ The dataset selected for this analysis comprises comprehensive records of Singap
 
 # Load the data from a CSV. We're caching this so it doesn't reload every time the app
 # reruns (e.g. if the user interacts with the widgets).
-#@st.cache_data
+@st.cache
 def load_data():
-    folder_path = "Users/elizabethjosephkoithara/Desktop/Kaplan/Mon_ICT305/Assg/01/HDB Dataset/"
+    folder_path = "HDB Dataset"  # Assuming 'HDB Dataset' folder is in the same directory as this script
     files = [
         "resale-flat-prices-based-on-approval-date-1990-1999_locationdata.csv",
         "resale-flat-prices-based-on-approval-date-2000-feb-2012_locationdata.csv",
@@ -54,6 +54,7 @@ flat_type = st.multiselect(
 
 # Show a slider widget with the years using `st.slider`.
 years = st.slider("Years", 1986, 2006, (2000, 2016))
+
 
 # Filter the dataframe based on the widget input and reshape it.
 df_filtered = df[(df["town"].isin(town)) & (df["flat_type"].between(flat_type[0], flat_type[1]))]
